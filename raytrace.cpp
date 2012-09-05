@@ -441,7 +441,6 @@ void linepic(int lineno, double pixels[SCREENWIDTH][3]) {
   // unsigned char buffer[3][SCREENWIDTH];
   int i;
   unsigned char r, g, b;
-//	double dr,dg,db;
 
   for (i = 0; i < width; i++) {
     r = calc_color_index(pixels[i][0]);
@@ -451,10 +450,6 @@ void linepic(int lineno, double pixels[SCREENWIDTH][3]) {
     *row++ = g;
     *row++ = b;
   }
-  //fwrite(&lineno,sizeof(int),1,filept);
-  //fwrite(buffer[0],sizeof(char),width,filept); /* red pixels for a line */
-//	fwrite(buffer[1],sizeof(char),width,filept); /* green pixels for a line */
-  // fwrite(buffer[2],sizeof(char),width,filept); /* blue pixels for a line */
 }
 
 void endpic(void) {
