@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <png.h>
+#include "raytrace.h"
 
 /*** Type definitions ***/
 
@@ -180,7 +181,7 @@ png_infop info_ptr = NULL;
 
 /*** The main program: ***/
 
-void main() {
+int main() {
   int line_y, pixel_x;
   t_3d scrnx, scrny, firstray, ray;
   t_color color;
@@ -429,11 +430,11 @@ void startpic(char outfile[60], int y, int x) {
   //fwrite(&x,sizeof(int),1,filept);
 //	fwrite(&y,sizeof(int),1,filept);
   png_init_io(png_ptr, filept);
-  row_pointers = png_malloc(png_ptr, SCREENHEIGHT * sizeof(png_byte *));
+  row_pointers = (png_byte **)png_malloc(png_ptr, SCREENHEIGHT * sizeof(png_byte *));
 }
 
 void linepic(int lineno, double pixels[SCREENWIDTH][3]) {
-  png_byte *row = png_malloc(png_ptr,
+  png_byte *row = (png_byte *)png_malloc(png_ptr,
       sizeof(unsigned char) * SCREENWIDTH * pixel_size);
   row_pointers[lineno] = row;
 
