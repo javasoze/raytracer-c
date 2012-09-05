@@ -2,4 +2,15 @@ A simple raytracer in C
 
 Scene is hardcoded in code, TODO...
 
-Output is in PIX format. TODO: make output a modern format.
+Steps:
+
+Go into Default directory
+
+make 
+
+./raytrace
+
+output should be r0.png file.
+
+Depends on libpng.
+
