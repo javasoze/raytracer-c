@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <png.h>
-#include "raytrace.h"
 
 /*** Type definitions ***/
 
