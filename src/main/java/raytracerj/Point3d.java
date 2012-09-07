@@ -3,7 +3,17 @@ package raytracerj;
 public class Point3d {
   public double x=0,y=0,z=0;
   
-  public final void noramlize(){
+  public Point3d(){
+    
+  }
+  
+  public Point3d(double x, double y, double z){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+  }
+  
+  public final void normalize(){
     double d = magnitude();
     if (d>0){
       x /= d;
@@ -30,6 +40,18 @@ public class Point3d {
     result.x = (a.y * b.z) - (a.z * b.y);
     result.y = (a.z * b.x) - (a.x * b.z);
     result.z = (a.x * b.y) - (a.y * b.x);
+  }
+  
+  public final static void diff(Point3d a,Point3d b,Point3d result){
+    result.x = a.x - b.x;
+    result.y = a.y - b.y;
+    result.z = a.z - b.z;
+  }
+  
+  public final static void sum(Point3d a,Point3d b,Point3d result){
+    result.x = a.x + b.x;
+    result.y = a.y + b.y;
+    result.z = a.z + b.z;
   }
   
   public final static void copy(Point3d from,Point3d to){
